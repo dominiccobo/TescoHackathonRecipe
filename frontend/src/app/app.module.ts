@@ -22,6 +22,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CdkTableModule} from "@angular/cdk/table";
 import {ReactiveFormsModule} from "@angular/forms";
 import { BasketComponent } from './basket/basket.component';
+import { BasketTotalComponent } from './basket/basket-total/basket-total.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BasketComponent } from './basket/basket.component';
     RecipeCategoryComponent,
     RecipeComponent,
     IngredientComponent,
-    BasketComponent
+    BasketComponent,
+    BasketTotalComponent
   ],
   imports: [
         BrowserModule,
