@@ -21,6 +21,7 @@ import {
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CdkTableModule} from "@angular/cdk/table";
 import {ReactiveFormsModule} from "@angular/forms";
+import { BasketComponent } from './basket/basket.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     RecipeListComponent,
     RecipeCategoryComponent,
     RecipeComponent,
-    IngredientComponent
+    IngredientComponent,
+    BasketComponent
   ],
   imports: [
         BrowserModule,
