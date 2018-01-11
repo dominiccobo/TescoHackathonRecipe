@@ -1,5 +1,6 @@
 package uk.ac.brunel.tescohackathonrecipe.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -32,6 +33,7 @@ public class Recipe {
      * List of generic ingredients forming part of the recipe
      */
     @OneToMany(targetEntity = RecipeGenericIngredient.class, mappedBy = "id")
+    @JsonManagedReference
     private List<RecipeGenericIngredient> ingredients;
 
     /**
