@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class BasketComponent implements OnInit {
 
   basketItems: string[] = [
-      'item 1',
-      'item 2',
-      'item 3'
+      'eggs',
+      'bread',
+      'milk'
   ];
 
   price = 2.00;
