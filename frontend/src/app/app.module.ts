@@ -14,7 +14,7 @@ import {
     MatGridListModule,
     MatIconModule,
     MatInputModule,
-    MatPaginatorModule,
+    MatPaginatorModule, MatSidenav, MatSidenavModule, MatSliderModule,
     MatTableModule,
     MatToolbarModule
 } from '@angular/material';
@@ -47,7 +47,9 @@ import { BasketTotalComponent } from './basket/basket-total/basket-total.compone
         MatTableModule,
         MatPaginatorModule,
         CdkTableModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatSidenavModule,
+        MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

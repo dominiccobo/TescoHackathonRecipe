@@ -1,33 +1,51 @@
-<h2 style ="width:50%; margin: 40px auto 0;">
-    Choose a recipe!
-</h2>
+<mat-drawer-container>
+    <mat-drawer mode="side" opened="true" style="width: 30%;">
+        <h3 style ="width:90%; margin: 40px auto 0;">Please select how many days you want to shop for</h3>
+        <mat-slider min="1" max="14" step="1" value="7" (change)="updateDays()" thumbLabel tickInterval="1" style="width: 100%"></mat-slider>
 
-<mat-grid-list cols="3" rowHeight="100px" style ="width:50%; margin: 20px auto 0;">
-    <mat-grid-tile *ngFor="let category of categories">
-        <div routerLink="" class="mat-elevation-z7" style="width: 80%; background: white; height: 80px;">
-            <h3>{{category}}</h3>
+        <mat-grid-list cols="1" rowHeight="6:1" style="overflow: auto;">
+            <mat-grid-tile *ngFor="let value of daysToShow">
+                <div style="width: 90%; height: 80px;" class="mat-elevation-z4">
+                    {{value}}
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-drawer>
+    <mat-drawer-content style="width: 70%; min-height: 875px;">
+
+        <h2 style ="width:50%; margin: 40px auto 0;">
+            Choose a recipe!
+        </h2>
+
+        <mat-grid-list cols="3" rowHeight="100px" style ="width:50%; margin: 20px auto 0;">
+            <mat-grid-tile *ngFor="let category of categories">
+                <div routerLink="" class="mat-elevation-z7" style="width: 80%; background: white; height: 80px;">
+                    <h3>{{category}}</h3>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+        <h2 style ="width:50%; margin: 0 auto; margin-top: 20px;">
+            Or search our database!
+        </h2>
+
+        <div style ="width:50%; height: 80px; margin: 40px auto 0;background: white" class="mat-elevation-z7" >
+            <mat-form-field style="width: 95%; margin-left: 15px; margin-top: 10px;">
+                <input type="text" matInput placeholder="Search">
+                <mat-icon matSuffix>search_icon</mat-icon>
+            </mat-form-field>
         </div>
-    </mat-grid-tile>
-</mat-grid-list>
 
-<h2 style ="width:50%; margin: 0 auto; margin-top: 20px;">
-    Or search our database!
-</h2>
+        <div style ="width:50%; margin: 4px auto 0;background: white" class="mat-elevation-z7" >
+            <button routerLink="/results" mat-button color="primary" style="width: 100%;">Search</button>
+        </div>
 
-<div style ="width:50%; height: 80px; margin: 40px auto 0;background: white" class="mat-elevation-z7" >
-        <mat-form-field style="width: 95%; margin-left: 15px; margin-top: 10px;">
-            <input type="text" matInput placeholder="Search">
-            <mat-icon matSuffix>search_icon</mat-icon>
-        </mat-form-field>
-</div>
+        <h2 style ="width:50%; margin: 40px auto 0;" routerLink="/basket">
+            <div style ="width:50%; margin: 4px auto 0;background: #3f51b5" class="mat-elevation-z7" >
+                <button routerLink="/basket" mat-button color="#ffffff" style="width: 100%;">Basket</button>
+            </div>
+        </h2>
 
-<div style ="width:50%; margin: 4px auto 0;background: white" class="mat-elevation-z7" >
-    <button routerLink="/results" mat-button color="primary" style="width: 100%;">Search</button>
-</div>
-
-<h2 style ="width:50%; margin: 40px auto 0;" routerLink="/basket">
-    <div style ="width:50%; margin: 4px auto 0;background: #3f51b5" class="mat-elevation-z7" >
-        <button routerLink="/basket" mat-button color="#ffffff" style="width: 100%;">Basket</button>
-    </div>
-</h2>
+    </mat-drawer-content>
+</mat-drawer-container>
 <!--<app-basket></app-basket>-->
