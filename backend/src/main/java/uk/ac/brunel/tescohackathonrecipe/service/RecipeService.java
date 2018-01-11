@@ -1,6 +1,7 @@
 package uk.ac.brunel.tescohackathonrecipe.service;
 
 import uk.ac.brunel.tescohackathonrecipe.domain.Recipe;
+import uk.ac.brunel.tescohackathonrecipe.domain.RecipeCategory;
 
 import java.util.List;
 
@@ -33,7 +34,7 @@ public interface RecipeService {
      * @param category category to serach in
      * @return list of recipes
      */
-    List<Recipe> getRecipesBySearchTerm(String term, String category);
+    List<Recipe> getRecipesBySearchTerm(String term, RecipeCategory category);
 
 
 }

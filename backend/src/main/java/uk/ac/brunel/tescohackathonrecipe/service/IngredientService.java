@@ -5,12 +5,14 @@ import uk.ac.brunel.tescohackathonrecipe.domain.SpecificIngredient;
 import java.util.List;
 
 /**
- * This a new class.
  *
- * @author dom
- * @since 11/01/2018
  */
 public interface IngredientService {
 
+    /**
+     * Retrieve a list of ingredients from tesco's database matching a generic item.
+     * @param ingredientName
+     * @return
+     */
     List<SpecificIngredient> getIngredientsFromTescoDatabase(String ingredientName);
 }
