@@ -6,7 +6,7 @@ package uk.ac.brunel.tescohackathonrecipe.domain;
  * @author dom
  * @since 10/01/2018
  */
-public enum RecipeType {
+public enum RecipeCategory {
 
     BREAKFAST(0),
     MAINCOURSE(1),
@@ -16,7 +16,7 @@ public enum RecipeType {
 
     final int id;
 
-    RecipeType(int id) {
+    RecipeCategory(int id) {
         this.id = id;
     }
 }

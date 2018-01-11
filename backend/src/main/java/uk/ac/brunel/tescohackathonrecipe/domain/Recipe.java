@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Recipe Model
@@ -16,17 +17,28 @@ import java.util.List;
 @Entity
 public class Recipe {
 
+    /**
+     * Id of hte recipe
+     */
     @Id
-    @GeneratedValue
-    private Long id;
+    private String id = UUID.randomUUID().toString();
 
+    /**
+     * Name of the recipe
+     */
     private String name;
 
-    @OneToMany(targetEntity = GenericIngredient.class, mappedBy = "id")
-    private List<GenericIngredient> ingredients;
+    /**
+     * List of generic ingredients forming part of the recipe
+     */
+    @OneToMany(targetEntity = RecipeGenericIngredient.class, mappedBy = "id")
+    private List<RecipeGenericIngredient> ingredients;
 
+    /**
+     * Recipe Category
+     */
     @Enumerated(value = EnumType.STRING)
-    private RecipeType recipeType;
+    private RecipeCategory recipeCategory;
 
 }
 

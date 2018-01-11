@@ -9,5 +9,5 @@ import uk.ac.brunel.tescohackathonrecipe.domain.Recipe;
  * @author dom
  * @since 10/01/2018
  */
-public interface RecipeDAO extends JpaRepository<Recipe, Long> {
+public interface RecipeDAO extends JpaRepository<Recipe, String> {
 }

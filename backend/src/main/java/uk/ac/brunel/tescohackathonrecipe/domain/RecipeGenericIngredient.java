@@ -7,6 +7,8 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import java.util.UUID;
 
 /**
  * Generic Ingredient Model.
@@ -15,11 +17,19 @@ import javax.persistence.Id;
 @Getter
 @Setter
 @Entity
-public class GenericIngredient {
+public class RecipeGenericIngredient {
 
+    /**
+     * Id of the generic ingredient.
+     */
     @Id
-    @GeneratedValue
-    private Long id;
+    private String id = UUID.randomUUID().toString();
+
+    /**
+     * Recipe the generic ingredient belongs to.
+     */
+    @ManyToOne(targetEntity = Recipe.class)
+    private Recipe recipe;
 
     private String name;
 }
