@@ -1,13 +1,12 @@
 package uk.ac.brunel.tescohackathonrecipe.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -29,7 +28,11 @@ public class RecipeGenericIngredient {
      * Recipe the generic ingredient belongs to.
      */
     @ManyToOne(targetEntity = Recipe.class)
+    @JsonBackReference
     private Recipe recipe;
+
+    @Transient
+    private List<SpecificIngredient> specificIngredientList;
 
     private String name;
 }
