@@ -4,38 +4,39 @@ import {Route, RouterModule, Routes} from '@angular/router';
 
 
 import { AppComponent } from './app.component';
-import {RecipeCategoryComponent} from "./recipe-category/recipe-category.component";
+import {RecipeCategoryComponent} from "./recipe-search/recipe-search.component";
 import {RecipeComponent} from "./recipe/recipe.component";
-import {RecipeListComponent} from "./recipe-list/recipe-list.component";
+import {RecipeListComponent} from "./recipe-results/recipe-results.component";
 import {CommonModule} from "@angular/common";
+import {IngredientComponent} from "./ingredient/ingredient.component";
 
 
 
 const routes:Route[] = [
   {
-    path: '',
-    redirectTo: '/category',
-    pathMatch: 'full'
+        path: '',
+        redirectTo: '/search',
+        pathMatch: 'full'
   },
   {
-    path: 'category',
-    component: RecipeCategoryComponent
+        path: 'search',
+        component: RecipeCategoryComponent
   },
   {
-    path: 'recipes',
-    component: RecipeListComponent
+        path: 'results',
+        component: RecipeListComponent
   },
   {
-    path: 'recipe',
-    component: RecipeComponent
+        path: 'recipe',
+        component: RecipeComponent
   }
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(routes)
-  ],
-  exports: [RouterModule]
+    imports: [
+        CommonModule,
+        RouterModule.forRoot(routes)
+    ],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

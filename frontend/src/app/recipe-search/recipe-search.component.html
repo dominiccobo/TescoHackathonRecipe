@@ -1,0 +1,27 @@
+<h2 style ="width:50%; margin: 40px auto 0;">
+    Choose a recipe!
+</h2>
+
+<mat-grid-list cols="3" rowHeight="100px" style ="width:50%; margin: 20px auto 0;">
+    <mat-grid-tile *ngFor="let category of categories">
+        <div routerLink="" class="mat-elevation-z7" style="width: 80%; background: white; height: 80px;">
+            <h3>{{category}}</h3>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<h2 style ="width:50%; margin: 0 auto; margin-top: 20px;">
+    Or search our database!
+</h2>
+
+<div style ="width:50%; height: 80px; margin: 40px auto 0;background: white" class="mat-elevation-z7" >
+        <mat-form-field style="width: 95%; margin-left: 15px; margin-top: 10px;">
+            <input type="text" matInput placeholder="Search">
+            <mat-icon matSuffix>search_icon</mat-icon>
+        </mat-form-field>
+</div>
+
+<div style ="width:50%; margin: 4px auto 0;background: white" class="mat-elevation-z7" >
+    <button routerLink="/results" mat-button color="primary" style="width: 100%;">Search</button>
+</div>
+

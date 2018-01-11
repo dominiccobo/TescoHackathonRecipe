@@ -3,12 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {AppRoutingModule} from './app-routing.module';
-import { RecipeCategoryComponent } from './recipe-category/recipe-category.component';
+import { RecipeCategoryComponent } from './recipe-search/recipe-search.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { IngredientComponent } from './ingredient/ingredient.component';
-import { RecipeListComponent } from "./recipe-list/recipe-list.component";
+import { RecipeListComponent } from './recipe-results/recipe-results.component';
 
-import { MatToolbarModule } from '@angular/material';
+import {
+    MatButtonModule,
+    MatCardModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatToolbarModule
+} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CdkTableModule} from "@angular/cdk/table";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -19,9 +31,19 @@ import { MatToolbarModule } from '@angular/material';
     IngredientComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MatToolbarModule
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        MatToolbarModule,
+        MatGridListModule,
+        MatIconModule,
+        MatInputModule,
+        MatButtonModule,
+        MatCardModule,
+        MatTableModule,
+        MatPaginatorModule,
+        CdkTableModule,
+        ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

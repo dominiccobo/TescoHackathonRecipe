@@ -1,3 +1,9 @@
-<p>
-  recipe works!
-</p>
+<h1 style ="width:90%; margin: 40px auto 0;">
+  Recipe
+</h1>
+<!-- For every ingredient in the recipe -->
+<app-ingredient *ngFor="let i of [1,2,3,4]"></app-ingredient>
+
+<div style ="width:50%; margin: 20px auto 0;background: white" class="mat-elevation-z7" >
+  <button routerLink="/ingredients/" mat-button color="danger" style="width: 100%;"><h2>Add selected to basket</h2></button>
+</div>

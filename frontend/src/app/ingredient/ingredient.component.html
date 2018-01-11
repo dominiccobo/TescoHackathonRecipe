@@ -1,3 +1,65 @@
-<p>
-  ingredient works!
-</p>
+<h2 style="width:70%; margin: 40px auto 0;">
+  Generic Ingredient
+</h2>
+<h3 style ="width:70%; margin: 40px auto 0;">
+  Results in our product range:
+</h3>
+<div style="width: 70%; margin: 40px auto 0">
+  <mat-table [dataSource]="storeRangeData" matSort>
+
+    <ng-container matColumnDef="image">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <div style="margin-left: 10px; height: 80px; width: 100px; background: pink;">{{row.image}}</div>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Product Name</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Price</mat-header-cell>
+      <mat-cell *matCellDef="let row">£{{row.price}} </mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="storeRangeColumns"></mat-header-row>
+    <mat-row style="margin-top: 10px; height: 100px; background: white"
+             *matRowDef="let row; columns: storeRangeColumns;">
+    </mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10]"></mat-paginator>
+
+</div>
+
+<h3 style ="width:70%; margin: 40px auto 0;">
+  Potentially in your fridge:
+</h3>
+
+<div style="width: 70%; margin: 40px auto 0">
+  <mat-table [dataSource]="homeRangeData" matSort>
+
+    <ng-container matColumnDef="image">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <div style="margin-left: 10px; height: 80px; width: 100px; background: pink;">{{row.image}}</div>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Item Name</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.name}}</mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="homeRangeColumns"></mat-header-row>
+    <mat-row style="margin-top: 10px; height: 100px; background: white"*matRowDef="let row; columns: homeRangeColumns;">
+    </mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10]"></mat-paginator>
+</div>
+
